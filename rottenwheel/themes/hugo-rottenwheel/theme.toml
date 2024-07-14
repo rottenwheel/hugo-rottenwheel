@@ -1,0 +1,17 @@
+name = "hugo-rottenwheel"
+license = "AGPL-3.0"
+licenselink = "https://github.com/rottenwheel/hugo-rottenwheel/raw/master/COPYING"
+description = "Hugo theme for Rottenwheel"
+homepage = "https://github.com/rottenwheel/hugo-rottenwheel"
+tags = ["minimal", "dark", "blog"]
+features = []
+min_version = "0.41"
+
+authors = [
+    {name = "Siren", homepage = "digilol.net"},
+]
+
+[original]
+    author = "Stnby"
+    homepage = "digilol.net"
+    repo = "https://gitlab.com/kernal/hugo-kernal"

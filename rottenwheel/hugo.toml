@@ -1,0 +1,11 @@
+baseURL = 'https://www.rottenwheel.com/'
+languageCode = 'en-us'
+title = 'rottenwheel'
+theme = 'hugo-rottenwheel'
+disableKinds = [ 'taxonomy' ]
+enableRobotsTXT = true
+
+[menu]
+    [[menu.main]]
+        url = "/posts/"
+        name = "blog"

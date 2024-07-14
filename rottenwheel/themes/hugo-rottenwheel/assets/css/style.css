@@ -1,0 +1,100 @@
+html {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+}
+body {
+  background: black;
+  color: white;
+}
+.container {
+  margin: auto;
+  padding: 0.5em 1em;
+  min-width: 300px;
+  max-width: 800px;
+}
+.header {
+  font-size: 1.4em;
+  user-select: none;
+}
+.header ul {
+  list-style-type: none;
+  overflow: hidden;
+  margin: 0;
+  padding: 0.5em 0;
+}
+.header li {
+  margin-left: 0.8em;
+  float: right;
+}
+.header li.home {
+  margin-left: 0;
+  float: left;
+  font-weight: 600;
+}
+.header a {
+  color: inherit;
+}
+ul.list {
+  list-style: none;
+  padding: 0;
+}
+ul.list li {
+  padding: 0.5em 0;
+}
+ul.list li span {
+  float: right;
+  padding-left: 0.5em;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+blockquote {
+  border-left: 5px solid currentColor;
+  padding-left: 1em;
+  margin-left: 0;
+}
+code {
+  font-family: "Source Code Pro", Consolas, "Ubuntu Mono", Menlo, "DejaVu Sans Mono", monospace, monospace !important;
+  font-size: 0.85em;
+  padding: 0.2em 0.3em;
+  border-radius: 4px;
+}
+pre code {
+  padding: 0;
+  border-radius: 0;
+  background: none;
+}
+pre {
+  padding: 1em;
+  overflow: auto;
+  border-radius: 4px;
+}
+table {
+  margin: 1em 0;
+  display: block;
+  overflow: auto;
+  border-collapse: collapse;
+}
+table td,
+table th {
+  border: 2px solid currentColor;
+  padding: 0.5em;
+}
+img {
+  max-width: 100%;
+}
+figure {
+  margin: 1em 0;
+  border-radius: 4px;
+}
+figure img {
+  width: 100%;
+}
+figcaption h4 {
+  margin: 0.2em;
+  text-align: center;
+}
+.content a {
+  text-decoration: underline;
+}
