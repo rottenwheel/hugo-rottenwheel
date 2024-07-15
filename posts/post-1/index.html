@@ -1,0 +1,73 @@
+<!doctype html><html class=dark lang=en-us><head><meta charset=UTF-8><title>Example post</title>
+<meta name=description content><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.128.2"><link rel=stylesheet href=/css/style.min.a2300dd0fbcbc91eb70c91148888ea7322a595ed0c5630ccc28d6beb44e8665d.css></head><body><div class=container><div class=header><ul><li class=home><a href=https://blog.rottenwheel.com/>rottenblog</a></li><li><a href=https://rottenwheel.com>about</a></li><li><a href=/>blog</a></li></ul></div><div class=content><h1>Example post</h1><p>What you need to do is:</p><ol><li>Create the sockets.</li><li>Add the sockets to the set (<code>FD_SET</code>).</li><li>Find the socket with the highest file descriptor for calls to select().</li></ol><p>Above also works with different type sockets (e.g. <code>AF_INET</code>, <code>AF_INET6</code>). It even works if you have different type sockets (e.g. one IPv4 and one IPv6) listening on the same port number. Dual stack sockets are a thing but this approach is more flexible.</p><h2 id=create-sockets>Create sockets</h2><p>For this example I will be creating two sockets. One of them will have an IPv4 address and the other IPv6. Nothing out of the ordinary here.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-C data-lang=C><span style=display:flex><span>	<span style=color:#75715e>/* Create IPv4 socket */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>struct</span> sockaddr_in serv_addr4, cli_addr4;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>int</span> addrlen4 <span style=color:#f92672>=</span> <span style=color:#66d9ef>sizeof</span>(cli_addr4);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> ((sockfd_v4 <span style=color:#f92672>=</span> <span style=color:#a6e22e>socket</span>(AF_INET, SOCK_STREAM, <span style=color:#ae81ff>0</span>)) <span style=color:#f92672>==</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>) {
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>perror</span>(<span style=color:#e6db74>&#34;socket&#34;</span>);
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>setsockopt</span>(sockfd_v4, SOL_SOCKET, SO_REUSEADDR, <span style=color:#f92672>&amp;</span>option, <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>int</span>));
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	serv_addr4.sin_family <span style=color:#f92672>=</span> AF_INET;
+</span></span><span style=display:flex><span>	serv_addr4.sin_addr.s_addr <span style=color:#f92672>=</span> <span style=color:#a6e22e>inet_addr</span>(IPV4_ADDR);
+</span></span><span style=display:flex><span>	serv_addr4.sin_port <span style=color:#f92672>=</span> <span style=color:#a6e22e>htons</span>(IPV4_PORT);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>bind</span>(sockfd_v4, (<span style=color:#66d9ef>struct</span> sockaddr <span style=color:#f92672>*</span>)<span style=color:#f92672>&amp;</span>serv_addr4, <span style=color:#66d9ef>sizeof</span>(serv_addr4)) <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>) {
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>perror</span>(<span style=color:#e6db74>&#34;bind&#34;</span>);
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>listen</span>(sockfd_v4, BACKLOG) <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>) {
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>perror</span>(<span style=color:#e6db74>&#34;listen&#34;</span>);
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/* Create IPv6 socket */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>struct</span> sockaddr_in6 serv_addr6, cli_addr6;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>int</span> addrlen6 <span style=color:#f92672>=</span> <span style=color:#66d9ef>sizeof</span>(cli_addr6);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> ((sockfd_v6 <span style=color:#f92672>=</span> <span style=color:#a6e22e>socket</span>(AF_INET6, SOCK_STREAM, <span style=color:#ae81ff>0</span>)) <span style=color:#f92672>==</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>) {
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>perror</span>(<span style=color:#e6db74>&#34;socket&#34;</span>);
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>setsockopt</span>(sockfd_v6, SOL_SOCKET, SO_REUSEADDR, <span style=color:#f92672>&amp;</span>option, <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>int</span>));
+</span></span><span style=display:flex><span>	serv_addr6.sin6_family <span style=color:#f92672>=</span> AF_INET6;
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>inet_pton</span>(AF_INET6, IPV6_ADDR, <span style=color:#f92672>&amp;</span>serv_addr6.sin6_addr);
+</span></span><span style=display:flex><span>	serv_addr6.sin6_port <span style=color:#f92672>=</span> <span style=color:#a6e22e>htons</span>(IPV6_PORT);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>bind</span>(sockfd_v6, (<span style=color:#66d9ef>struct</span> sockaddr <span style=color:#f92672>*</span>)<span style=color:#f92672>&amp;</span>serv_addr6, <span style=color:#66d9ef>sizeof</span>(serv_addr6)) <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>) {
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>perror</span>(<span style=color:#e6db74>&#34;bind&#34;</span>);
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>listen</span>(sockfd_v6, BACKLOG) <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>) {
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>perror</span>(<span style=color:#e6db74>&#34;listen&#34;</span>);
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>	}
+</span></span></code></pre></div><h2 id=adding-sockets-to-the-set-and-calling-select>Adding sockets to the set and calling select()</h2><p><code>FD_SET()</code> is called on each socket. Later on we compare the two sockets to see which one has the highest file descriptor (stored in <code>maxfd</code>). Additionally, there&rsquo;s an array of structures that also contain sockets (<code>clients</code>), their values are also checked to find the highest descriptor. Finally we can call <code>select()</code> with <code>maxfd + 1</code>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-C data-lang=C><span style=display:flex><span>	<span style=color:#66d9ef>for</span> (;;) {
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>FD_ZERO</span>(<span style=color:#f92672>&amp;</span>descriptors);
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>FD_SET</span>(sockfd_v4, <span style=color:#f92672>&amp;</span>descriptors);
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>FD_SET</span>(sockfd_v6, <span style=color:#f92672>&amp;</span>descriptors);
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (sockfd_v6 <span style=color:#f92672>&gt;</span> sockfd_v4)
+</span></span><span style=display:flex><span>			maxfd <span style=color:#f92672>=</span> sockfd_v6;
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>else</span>
+</span></span><span style=display:flex><span>			maxfd <span style=color:#f92672>=</span> sockfd_v4;
+</span></span><span style=display:flex><span>		<span style=color:#75715e>/* Add all socket descriptors to the read list. */</span>
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>for</span> (id <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; id <span style=color:#f92672>&lt;</span> maxclients; id<span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>if</span> (clients[id] <span style=color:#f92672>!=</span> NULL) {
+</span></span><span style=display:flex><span>				<span style=color:#a6e22e>FD_SET</span>(clients[id]<span style=color:#f92672>-&gt;</span>connfd, <span style=color:#f92672>&amp;</span>descriptors);
+</span></span><span style=display:flex><span>				<span style=color:#75715e>/* Find highest file descriptor, needed for the select function. */</span>
+</span></span><span style=display:flex><span>				<span style=color:#66d9ef>if</span> (clients[id]<span style=color:#f92672>-&gt;</span>connfd <span style=color:#f92672>&gt;</span> maxfd)
+</span></span><span style=display:flex><span>					maxfd <span style=color:#f92672>=</span> clients[id]<span style=color:#f92672>-&gt;</span>connfd;
+</span></span><span style=display:flex><span>			}
+</span></span><span style=display:flex><span>		}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>select</span>(maxfd <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span> ,<span style=color:#f92672>&amp;</span>descriptors, NULL, NULL, NULL) <span style=color:#f92672>==</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>			<span style=color:#a6e22e>perror</span>(<span style=color:#e6db74>&#34;select&#34;</span>);
+</span></span><span style=display:flex><span>...
+</span></span></code></pre></div><h2 id=full-server-example>Full server example</h2><p>The snippets in this post are taken from kernal-chat and simplified. You can find the full source code <a href=https://gitlab.com/kernal/kchat/-/blob/master/src/kchat.c>here</a>.</p><p>Leave us a message on</p><pre tabindex=0><code>$ nc 2a02:c207:2043:4492:: 1337 # or
+$ nc chat.kernal.eu 1337
+</code></pre></div></div></body></html>
