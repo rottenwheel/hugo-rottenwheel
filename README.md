@@ -66,3 +66,7 @@ The homepage content and layout can be customized by editing the `content/_index
 
 - `content/_index.md`: Contains the metadata for the homepage.
 - `layouts/index.html`: Defines the HTML structure and layout for the homepage.
+
+## License
+
+Hugo Rottenwheel is released under GNU General Public License v3.0. See [LICENSE](./LICENSE) for more information.
