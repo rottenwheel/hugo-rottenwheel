@@ -1,5 +1,9 @@
 {{ define "main" }}
 
+<p>
+    RSS feed <a href="/index.xml">here</a>.
+</p>
+
 <h2>Latest Posts</h2>
 <ul>
     {{ range where .Site.RegularPages "Section" "posts" }}
