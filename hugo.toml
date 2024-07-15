@@ -1,11 +1,15 @@
-baseURL = 'https://www.rottenwheel.com/'
+baseURL = 'https://blog.rottenwheel.com/'
 languageCode = 'en-us'
-title = 'rottenwheel'
+title = 'rottenblog'
 theme = 'hugo-rottenwheel'
-disableKinds = [ 'taxonomy' ]
+disableKinds = ['taxonomy']
 enableRobotsTXT = true
 
 [menu]
-    [[menu.main]]
-        url = "/posts/"
-        name = "blog"
+[[menu.main]]
+url = "/"
+name = "blog"
+
+[[menu.main]]
+url = "https://rottenwheel.com"
+name = "about"
