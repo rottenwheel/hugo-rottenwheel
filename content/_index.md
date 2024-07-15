@@ -1,5 +1,5 @@
 ---
-title: rottenwheel's blog
+title: rottenblog
 ---
 
 RSS feed [here](/index.xml).
