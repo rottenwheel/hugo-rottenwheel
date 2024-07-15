@@ -1,6 +1,7 @@
 ---
 title: "Example post"
 date: 2022-01-28T03:00:00+03:00
+image: "images/duckpond-small.png"
 ---
 
 What you need to do is:
