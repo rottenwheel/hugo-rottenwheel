@@ -8,7 +8,7 @@
 <ul>
     {{ range where .Site.RegularPages "Section" "posts" }}
     <li>
-        <a href="{{ .Permalink }}">{{ .Title }}</a> - {{ .Date.Format "2006-01-02" }}
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a> - {{ .Date.Format "2006-01-02" }}
     </li>
     {{ end }}
 </ul>
