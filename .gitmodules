@@ -1,0 +1,3 @@
+[submodule "themes/rottentheme"]
+	path = themes/rottentheme
+	url = https://github.com/rottenwheel/rottentheme

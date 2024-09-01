@@ -2,6 +2,8 @@
 
 This is the source code for [rottenblog](https://blog.rottenwheel.com/). It is a static site generated using [Hugo](https://gohugo.io/).
 
+[Rottentheme](https://github.com/rottenwheel/rottentheme) is the theme used by rottenblog.
+
 ## Getting Started
 
 ### Prerequisites
