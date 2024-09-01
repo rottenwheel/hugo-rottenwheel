@@ -1,7 +1,7 @@
 baseURL = 'https://blog.rottenwheel.com/'
 languageCode = 'en-us'
 title = 'rottenblog'
-theme = 'hugo-rottenwheel'
+theme = 'rottentheme'
 disableKinds = ['taxonomy']
 enableRobotsTXT = true
 
