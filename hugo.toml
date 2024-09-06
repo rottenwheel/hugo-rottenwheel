@@ -5,6 +5,10 @@ theme = 'rottentheme'
 disableKinds = ['taxonomy']
 enableRobotsTXT = true
 
+[[menu.main]]
+url = "/index.xml"
+name = "RSS"
+
 [menu]
 [[menu.main]]
 url = "/"
