@@ -5,6 +5,13 @@ theme = 'rottentheme'
 disableKinds = ['taxonomy']
 enableRobotsTXT = true
 
+[params]
+  repo = "https://github.com/rottenwheel/hugo-rottenwheel"
+
+[[menu.main]]
+url = "/index.xml"
+name = "RSS"
+
 [menu]
 [[menu.main]]
 url = "/"
@@ -13,3 +20,12 @@ name = "blog"
 [[menu.main]]
 url = "https://rottenwheel.com"
 name = "about"
+
+[[params.footer.items]]
+url = "https://blog.rottenwheel.com"
+name = "Clearnet"
+
+[[params.footer.items]]
+url = "http://blog.rotten7573m2nr2yfk7csmdshktycg76b37riuv6f2qfyzdhgiskm6id.onion"
+icon = "tor.png"
+name = "Onion"
