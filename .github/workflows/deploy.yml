@@ -1,4 +1,4 @@
-name: Build and Deploy Hugo Site
+name: Deploy latest site
 
 on:
   push:
@@ -6,24 +6,20 @@ on:
       - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-    - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v3
-      with:
-        hugo-version: 'latest'
+    - name: Setup SSH
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id
+        chmod 600 ~/.ssh/id
+        echo "${{ secrets.SERVER_FINGERPRINT }}" >> ~/.ssh/known_hosts
 
-    - name: Build
-      run: hugo --minify
-
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./public
-        publish_branch: pages
+    - name: Run rotten-build command
+      run: |
+        ssh -o StrictHostKeyChecking=yes ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_ADDRESS }} "sudo rotten-build"
