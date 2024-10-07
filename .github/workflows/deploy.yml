@@ -22,4 +22,4 @@ jobs:
 
     - name: Run rotten-build command
       run: |
-        ssh -o StrictHostKeyChecking=yes ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_ADDRESS }} "sudo rotten-build"
+        ssh -i ~/.ssh/id -o StrictHostKeyChecking=yes ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_ADDRESS }} "sudo rotten-build"
