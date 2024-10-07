@@ -55,8 +55,6 @@ The generated site will be in the `public/` directory.
    date: 2024-07-15
    ---
 
-   # My New Post
-
    This is the content of my new post.
    ```
 
