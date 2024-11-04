@@ -5,6 +5,7 @@ image: "/images/2.jpg"
 ---
 
 *Turn your Twitter DM's from a honeypot of data just waiting to be exposed into an encrypted jumble of characters that @jack can't simply crack.*
+
 **Note**: This tutorial was written by Diverter_NoKYC, not me; I am simply offering a clearnet and .onion mirror since original site is down.
 
 # PGP Encryption Made Simple
