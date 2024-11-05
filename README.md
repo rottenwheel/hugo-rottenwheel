@@ -53,6 +53,7 @@ The generated site will be in the `public/` directory.
    ---
    title: "My New Post"
    date: 2024-07-15
+   image: "/images/2.jpg"
    ---
 
    This is the content of my new post.
