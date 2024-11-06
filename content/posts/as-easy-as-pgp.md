@@ -8,6 +8,8 @@ image: "/images/2.jpg"
 
 **Note**: This tutorial was written by Diverter_NoKYC, not me; I am simply offering a clearnet and .onion mirror since original site is down.
 
+![Encryption](/images/2.jpg)
+
 # PGP Encryption Made Simple
 
 **For many users, PGP encryption has been out of reach for some time.**
