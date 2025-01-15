@@ -58,7 +58,7 @@ So while authorities sometimes justify surveillance programs based on trust in g
 - Public figures need off-stage spaces to relax and shed polished personas. Constant visibility strains personal authenticity and integrity.
 - Parents want privacy to monitor their children’s online activities and relationships appropriately. Children deserve privacy to learn and grow up shielded from constant judgement.
 - Whistleblowers, activists, journalists and reformers require confidentiality to conduct investigations that expose institutional corruption, misconduct and abuses of power.
-- Private account systems like anonymous medical hotlines allow people to seek advice about stigmatized conditions without it影响ing reputations. Surveillance stops socially beneficial exploration.
+- Private account systems like anonymous medical hotlines allow people to seek advice about stigmatized conditions without affecting reputations. Surveillance stops socially beneficial exploration.
 
 So while the “nothing to hide” view characterizes humans as perfectly transparent beings, in reality everyone plays roles, shares confidences and maintains zones of life distinct from public identity. Privacy grants individuals control over self-presentation appropriate to varied contexts and audiences. Surveillance makes that situational shifting of personal boundaries impossible.
 
