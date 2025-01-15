@@ -1,5 +1,5 @@
 ---
-title: 'Ive Got Nothing to Hide and Other Misunderstandings of Privacy'
+title: 'I've Got Nothing to Hide and Other Misunderstandings of Privacy'
 date: 2025-01-14T23:30:20-06:00
 image: "/images/private.jpg"
 ---
