@@ -7,6 +7,7 @@ image: "/images/noKYConly.png"
 *Avoid the creep.*
 
 **Note**: This article was written by Bitcoin_QnA, not me; I am simply hosting a clearnet and .onion mirror on my blog for archival and convenience purposes.
+
 **Original [piece](https://bitcoiner.guide/nokyconly/)**.
 
 ![noKYC Only](/images/noKYConly.png)
@@ -107,7 +108,7 @@ This is where an exchange offers account signup without KYC and subsequently req
 
 # Can I un-KYC myself?
 
-Once you have purchased Bitcoin from a KYC source you can never undo that. Not even with advanced techniques like Coinjoin that create forward looking privacy. You have three main options…
+Once you have purchased Bitcoin from a KYC source you can **never** undo that. Not even with advanced techniques like Coinjoin that create forward looking privacy. You have three main options…
 
 ### Go back out the way you came and start fresh
 
