@@ -6,7 +6,7 @@ image: "/images/private.jpg"
 
 *The statement “I’ve got nothing to hide” is often invoked during debates around privacy and surveillance. At first glance, it seems like a reasonable argument — if someone hasn’t done anything wrong, why should they care about having their data collected or their activities monitored? However, this reasoning is based on several faulty assumptions and misunderstandings about the value and importance of privacy.*
 
-**Note**: This is a Medium [article](https://scribe.rip/@1kg/ive-got-nothing-to-hide-and-other-misunderstandings-of-privacy-b7ae8bf26603) based on an [essay](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=998565) of the same title, published by Daniel J. Solove from George Washington University - Law School. I am simply mirroring such article on my self-hosted blog.
+**Note**: This is a Medium [article](https://small.private.coffee/@1kg/ive-got-nothing-to-hide-and-other-misunderstandings-of-privacy-b7ae8bf26603) based on an [essay](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=998565) of the same title, published by Daniel J. Solove from George Washington University - Law School. I am simply mirroring such article on my self-hosted blog.
 
 ![Private](/images/private.jpg)
 
