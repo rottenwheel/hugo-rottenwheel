@@ -10,8 +10,6 @@ image: "/images/high-prices-in-times-of-crisis.png"
 
 ![High-Prices](/images/high-prices-in-times-of-crisis.png)
 
-The arrival of the coronavirus brought not only illness and death but also fear and panic. In such an environment of uncertainty, people have naturally stocked up on necessities, not knowing when things will return to normal.
-
 Retail shelves have been cleared out, and even online suppliers like Amazon and Walmart are out of stock for some items. Independent sellers on these e-commerce platforms have had to fill the gap. With the huge increase in demand, they have found that their inventory has skyrocketed in value.
 
 Many in need of these items (e.g. toilet paper, hand sanitizer and masks) balk at the new prices. They feel they are being taken advantage of in a time of need and call for intervention by the government to lower prices. The government has heeded that call, labeling the independent sellers as "price gougers" and threatening sanctions if they don't lower their prices. Amazon has suspended seller accounts and law enforcement at all levels have threatened to prosecute. Prices have dropped as a result and at first glance this seems like a victory for fair play. But, we will have to dig deeper to understand the unseen consequences of this intervention.
