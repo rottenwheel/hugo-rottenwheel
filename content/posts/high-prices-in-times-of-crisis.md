@@ -6,7 +6,7 @@ image: "/images/high-prices-in-times-of-crisis.png"
 
 *The arrival of the coronavirus brought not only illness and death but also fear and panic. In such an environment of uncertainty, people have naturally stocked up on necessities, not knowing when things will return to normal.*
 
-**Note**: This is a Substack [article](https://rossulbricht.substack.com/p/high-prices-in-times-of-crisis) written by [Ross Ulbricht](https://primal.net/e/nevent1qqszelw7vtp0eg40xcrd9e0jwwug57s2452kg05hwqc3kdwfzhsmuqgsd73f6). I am simply mirroring such article on my self-hosted blog and in the process, fixing a few typoes spotted in original piece.
+**Note**: This is a Substack [article](https://rossulbricht.substack.com/p/high-prices-in-times-of-crisis) written by [Ross Ulbricht](https://primal.net/e/nevent1qqszelw7vtp0eg40xcrd9e0jwwug57s2452kg05hwqc3kdwfzhsmuqgsd73f6). I am simply mirroring such article on my self-hosted blog and in the process, fixing a [few typoes](https://primal.net/e/nevent1qvzqqqqqqypzp42vshaxfqmrnccxmvl05ruvd0el089xrhclck9mc05un50g2p84qyt8wumn8ghj76rfwd6zumn0wd68ytnvv9hxgtcpzamhxue69uhhyetvv9ujuvrcvd5xzapwvdhk6tcpz4mhxue69uhhwmmwwvhxxctvwesjuer9wchsqgrkyyuj6fys2theejkgsl9a8hltq77j8u2sr2v46hahsz8p09zazvz6cqj0) spotted in original piece.
 
 ![High-Prices](/images/high-prices-in-times-of-crisis.png)
 
