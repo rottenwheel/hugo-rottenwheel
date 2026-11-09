@@ -69,7 +69,7 @@ Turns out I was wrong. Not everything is transactional or sub(consciously)-trans
 
 Unfortunately, language is too limited a medium for information, and far more so for emotional exchange, even when spoken (+ voiceprints are real, they [were real even before AI](https://www.youtube.com/watch?v=5Gd05WJG0J4&t=529s)). So here is something truer: this is exactly how my thoughts and soul sound right now as I write ([backup link](https://odysee.com/@AilliA:6/thankyou:00) in case Substack alters the quality or the embed fails):
 
-Standard markdown way of inserting an image for the embed did not work at the time of transcription. Find mentioned _Thank you_ message in video format on [Odysee](https://odysee.com/@AilliA:6/thankyou:00)](https://odysee.com).
+Standard markdown way of inserting an image for the embed did not work at the time of transcription. Find mentioned _Thank you_ message in video format on [Odysee](https://odysee.com/@AilliA:6/thankyou:00).
 
 Richter - J.S. Bach: The Well-Tempered Clavier, Prelude No. 1 in C Major, BWV 846
 
